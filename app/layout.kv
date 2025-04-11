@@ -1,0 +1,124 @@
+GerenciadorDeTelas:
+    TelaTemporizador
+    TelaTarefas
+    TelaSobre
+
+
+<TelaTemporizador>:
+    name: 'tela_temporizador'
+
+    MDFloatLayout:
+        orientation: 'vertical'
+
+        MDTopAppBar:
+            title: 'Quick Temporizador'
+            size_hint_x: 1
+            height: dp(56)
+            pos_hint: {'top': 1}
+            left_action_items: [["information-outline", app.tela1]]  
+            right_action_items: [["checkbox-marked", app.tela2]]  # Botão de tarefas
+            md_bg_color: [1, 0.7, 0, 1]
+
+    MostraTemporizador:
+        id: temporizador
+        size_hint: (1, 1)
+
+        MDLabel:
+            text: 'Temporizador'
+            font_styler: 'H1'
+            font_size: '20sp'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.73}
+            size_hint_y: None
+            halign: 'center'
+            underline: True
+
+
+        MDLabel:
+            text: temporizador.tempo_string
+            font_style: 'H1'
+            halign: 'center'
+            size_hint_y: None
+            height: dp(100)
+            pos_hint: {'center_x': 0.5, 'center_y': 0.6}
+
+        MDRaisedButton:
+            text: temporizador.botao_string
+            size_hint_x: None
+            width: dp(200)
+            pos_hint: {'center_x': 0.35, 'center_y': 0.4}
+            md_bg_color: [1, 0.7, 0, 1]
+            on_release: temporizador.click()
+
+        MDRaisedButton:
+            text: 'Zerar'
+            size_hint_x: None
+            width: dp(200)
+            pos_hint: {'center_x': 0.65, 'center_y': 0.4}
+            md_bg_color: [1, 0.7, 0, 1]
+            on_release: temporizador.zerar()
+
+
+<TelaTarefas>:
+    name: 'tela_tarefas'
+
+    MDFloatLayout:
+        orientation: 'vertical'
+
+        MDTopAppBar:
+            title: 'Quick Tarefas'
+            anchor_title: 'center'
+            size_hint_x: 1
+            height: dp(56)
+            pos_hint: {'top': 1}
+            md_bg_color: [1, 0.7, 0, 1]
+            left_action_items: [["arrow-left", app.tela]]
+
+        MDRectangleFlatIconButton:
+            icon: 'plus'
+            text: 'Adicionar Tarefa'
+            text_color: [1, 1, 1, 1]
+            md_bg_color: [1, 0.7, 0, 1]
+            icon_color: [1, 0.7, 0, 1]
+            size_hint_x: 0.5
+            pos_hint: {'center_x': .5, 'center_y': .05}
+            on_release: root.adicionar_tarefa()
+
+        ScrollView:
+            size_hint: (1, 0.3)
+            pos_hint: {'center_x': 0.5, 'center_y': 0.55}
+            do_scroll_x: False
+            do_scroll_y: True
+            spacing: dp(5)
+            padding: dp(5)
+
+        GridLayout:
+            id: tarefas_container
+            cols: 1
+            spacing: dp(10)
+            padding: dp(10)
+            size_hint_y: 0.82
+            height: self.minimum_height
+
+
+<TelaSobre>:
+    name: 'tela_sobre'
+
+    MDFloatLayout:
+        orientation: 'vertical'
+        
+        Image:
+            source: 'imagesobre.png' 
+            allow_stretch: True
+            keep_ratio: False
+            size_hint: (1, 0.9)
+            pos_hint: {'center_x': 0.5, 'y': 0}
+            y: dp(56) 
+
+        MDTopAppBar:
+            title: 'Sobre o aplicativo'
+            size_hint_x: 1
+            height: dp(56)
+            pos_hint: {'top': 1}
+            right_action_items: [["arrow-right", app.tela]]
+            md_bg_color: [0, 0, 0, 0.3]
+        
