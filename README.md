@@ -3,7 +3,7 @@
 **QuickTarefas** é um aplicativo simples e intuitivo de produtividade desenvolvido com **Python** e **KivyMD**. Ele combina um **gerenciador de tarefas** com um **temporizador Pomodoro**, ideal para ajudar na organização e foco nas atividades do dia a dia.
 
 
-![Texto alternativo](1.jpeg)
+![Texto alternativo](image/1.jpeg)
 
 ---
 
@@ -24,8 +24,7 @@ O app possui três telas principais:
 - **Temporizador:** controle do tempo com o estilo Pomodoro.
 - **Sobre:** seção descritiva ou informativa sobre o app.
 
-![Texto alternativo](2.jpeg)
-![Texto alternativo](3.jpeg)
+![Texto alternativo](image/3.jpeg)
 
 ---
 
@@ -37,7 +36,8 @@ O app possui três telas principais:
 
 ---
 
-![Texto alternativo](5.jpeg)
+![Texto alternativo](image/4.jpeg)
+![Texto alternativo](image/5.jpeg)
 
 ## 🛠️ Como Executar
 
